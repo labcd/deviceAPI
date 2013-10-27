@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Device API</title>
+    </head>
+    <body>
+        <p id="device">Loading device properties...</p>
+    </body>
+
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+            
+            document.addEventListener("deviceready", onDeviceReady, false);
+            
+            function onDeviceReady() {
+                var element = document.getElementById('device');
+                element.innerHTML = '<span class="key">Device Model:</span> '     + device.model     + '<br />' +
+                '<span class="key">Device Cordova:</span> '  + device.cordova  + '<br/>' +
+                '<span class="key">Device Platform:</span> ' + device.platform + '<br/>' +
+                '<span class="key">Device UUID:</span> '     + device.uuid     + '<br/>' +
+                '<span class="key">Device Version:</span> '  + device.version  + '<br/>';
+            }
+
+        </script>
+</html>
